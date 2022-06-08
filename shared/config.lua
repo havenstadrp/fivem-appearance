@@ -219,7 +219,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["mask"]      = {item = 0, texture = 0}, -- Mask
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 3, 4 },
             },
             {
                 outfitLabel = "Hoofdcommissaris",
@@ -235,7 +235,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["mask"]      = {item = 0, texture = 0}, -- Mask
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 4 },
             },
             {
                 outfitLabel = "Motor",
@@ -251,7 +251,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["mask"]      = {item = 0, texture = 0}, -- Mask
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 1, 2, 3, 4 },
             },
             {
                 outfitLabel = "SWAT",
@@ -267,7 +267,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["mask"]      = {item = 54, texture = 0}, -- Mask
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 2, 3, 4 },
             }
         },
         ["female"] = {
@@ -303,7 +303,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["mask"]      = {item = 0, texture = 0}, -- Mask
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = {  1, 2, 3, 4 },
             },
             {
                 outfitLabel = "Sergeant",
@@ -320,7 +320,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["mask"]      = {item = 0, texture = 0}, -- Mask
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 2, 3, 4 },
             },
             {
                 outfitLabel = "Inspecteur",
@@ -337,7 +337,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["mask"]      = {item = 0, texture = 0}, -- Mask
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 3, 4 },
             },
             {
                 outfitLabel = "Hoofdcommissaris",
@@ -354,8 +354,40 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["mask"]      = {item = 0, texture = 0}, -- Mask
                 },
-                grades = {3, 4},
-            }
+                grades = { 4 },
+            },
+            {
+                outfitLabel = "Motor",
+                outfitData = {
+                    ["pants"]     = {item = 158, texture = 0}, -- Pants
+                    ["arms"]      = {item = 3, texture = 0}, -- Arms
+                    ["t-shirt"]   = {item = 35, texture = 0}, -- T Shirt
+                    ["vest"]      = {item = 0, texture = 0}, -- Body Vest
+                    ["torso2"]    = {item = 447, texture = 0}, -- Jacket
+                    ["shoes"]     = {item = 25, texture = 0}, -- Shoes
+                    ["accessory"] = {item = 0, texture = 0}, -- Neck Accessory
+                    ["hat"]       = {item = 123, texture = 0}, -- Hat
+                    ["glass"]     = {item = 0, texture = 0}, -- Glasses
+                    ["mask"]      = {item = 0, texture = 0}, -- Mask
+                },
+                grades = { 1, 2, 3, 4 },
+            },
+            {
+                outfitLabel = "SWAT",
+                outfitData = {
+                    ["pants"]     = {item = 30, texture = 0}, -- Pants
+                    ["arms"]      = {item = 3, texture = 0}, -- Arms
+                    ["t-shirt"]   = {item = 159, texture = 0}, -- T Shirt
+                    ["vest"]      = {item = 10, texture = 0}, -- Body Vest
+                    ["torso2"]    = {item = 42, texture = 0}, -- Jacket
+                    ["shoes"]     = {item = 25, texture = 0}, -- Shoes
+                    ["accessory"] = {item = 0, texture = 0}, -- Neck Accessory
+                    ["hat"]       = {item = 114, texture = 0}, -- Hat
+                    ["glass"]     = {item = 0, texture = 0}, -- Glasses
+                    ["mask"]      = {item = 0, texture = 0}, -- Mask
+                },
+                grades = { 2, 3, 4 },
+            },
         }
     },
     ["realestate"] = {
@@ -376,7 +408,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["mask"]      = {item = 0, texture = 0}, -- Mask
                 },
-                grades = {0, 1, 2, 3, 4},
+                grades = { 0, 1, 2, 3, 4 },
             }
         },
         ["female"] = {
@@ -418,7 +450,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["ear"]       = {item = 0, texture = 0}, -- Ear accessories
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 0, 1, 2, 3 },
             },
             {
                 outfitLabel = "Ambulancier",
@@ -437,7 +469,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["ear"]       = {item = 0, texture = 0}, -- Ear accessories
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 1, 2, 3 },
             },
             {
                 outfitLabel = "Verpleger",
@@ -456,9 +488,9 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["ear"]       = {item = 0, texture = 0}, -- Ear accessories
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 2, 3 },
             },
-             {
+            {
                 outfitLabel = "Hoofdarts",
                 outfitData = {
                     ["arms"]      = {item = 4, texture = 0}, -- Arms
@@ -475,7 +507,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["ear"]       = {item = 0, texture = 0}, -- Ear accessories
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 3 },
             }
         },
         ["female"] = {
@@ -496,7 +528,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["ear"]       = {item = 0, texture = 0}, -- Ear accessories
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 0, 1, 2, 3 },
             },
             {
                 outfitLabel = "Ambulancier",
@@ -515,7 +547,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["ear"]       = {item = 0, texture = 0}, -- Ear accessories
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 1, 2, 3 },
             },
             {
                 outfitLabel = "Verpleger",
@@ -534,7 +566,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["ear"]       = {item = 0, texture = 0}, -- Ear accessories
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 2, 3 },
             },
             [4] = {
                 outfitLabel = "Hoofdarts",
@@ -553,7 +585,7 @@ Config.Outfits = {
                     ["glass"]     = {item = 0, texture = 0}, -- Glasses
                     ["ear"]       = {item = 0, texture = 0}, -- Ear accessories
                 },
-                grades = { 0, 1, 2, 3, 4 },
+                grades = { 3 },
             }
         }
     }
