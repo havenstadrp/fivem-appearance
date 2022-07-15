@@ -36,7 +36,7 @@ local function RemoveTargets()
         RemoveTargetPeds(TargetPeds.ClothingRoom)
     else
         for k, v in pairs(Config.ClothingRooms) do
-            exports['qb-target']:RemoveZone('clothing_' .. v.job or v.gang .. k)
+            exports['qb-target']:RemoveZone('clothing_' .. (v.job or v.gang) .. k)
         end
     end
 
@@ -196,19 +196,17 @@ function getDefaultConfig()
     }
 end
 
-local function getConfigForPermission(hasPedPerms)
+local function getNewCharacterConfig()
     local config = getDefaultConfig()
-    config.ped = true
-    config.headBlend = true
-    config.faceFeatures = true
-    config.headOverlays = true
-    config.components = true
-    config.props = true
-    config.tattoos = true
+    config.enableExit   = false
 
-    if Config.EnablePedMenu then
-        config.ped = hasPedPerms
-    end
+    config.ped          = Config.NewCharacterSections.Ped
+    config.headBlend    = Config.NewCharacterSections.HeadBlend
+    config.faceFeatures = Config.NewCharacterSections.FaceFeatures
+    config.headOverlays = Config.NewCharacterSections.HeadOverlays
+    config.components   = Config.NewCharacterSections.Components
+    config.props        = Config.NewCharacterSections.Props
+    config.tattoos      = Config.NewCharacterSections.Tattoos
 
     return config
 end
@@ -229,16 +227,13 @@ RegisterNetEvent('qb-clothes:client:CreateFirstCharacter', function()
         exports['fivem-appearance']:setPedProps(ped, Config.InitialPlayerClothes[gender].Props)
         exports['fivem-appearance']:setPedHair(ped, Config.InitialPlayerClothes[gender].Hair)
         ClearPedDecorations(ped)
-        QBCore.Functions.TriggerCallback("QBCore:HasPermission", function(permission)
-            local config = getConfigForPermission(permission)
-            config.enableExit = false
-            exports['fivem-appearance']:startPlayerCustomization(function(appearance)
-                if (appearance) then
-                    TriggerServerEvent('fivem-appearance:server:saveAppearance', appearance)
-                    ResetRechargeMultipliers()
-                end
-            end, config)
-        end, Config.PedMenuGroup)
+        local config = getNewCharacterConfig()
+        exports['fivem-appearance']:startPlayerCustomization(function(appearance)
+            if (appearance) then
+                TriggerServerEvent('fivem-appearance:server:saveAppearance', appearance)
+                ResetRechargeMultipliers()
+            end
+        end, config)
     end)
 end)
 
@@ -444,6 +439,9 @@ RegisterNetEvent("fivem-appearance:client:openJobOutfitsListMenu", function(data
 end)
 
 RegisterNetEvent("fivem-appearance:client:openClothingShopMenu", function(isPedMenu)
+    if type(isPedMenu) == "table" then
+        isPedMenu = false
+    end
     OpenMenu(isPedMenu, "fivem-appearance:client:openClothingShopMenu", "default")
 end)
 
@@ -651,8 +649,9 @@ local function getPlayerJobOutfits(clothingRoom)
     if PlayerData.charinfo.gender == 1 then
         gender = "female"
     end
-    local gradeLevel = clothingRoom.isGang and PlayerGang.grade.level or PlayerJob.grade.level
-    local jobName = clothingRoom.isGang and PlayerGang.name or PlayerJob.name
+
+    local gradeLevel = clothingRoom.job and PlayerJob.grade.level or PlayerGang.grade.level
+    local jobName = clothingRoom.job and PlayerJob.name or PlayerGang.name
 
     for i = 1, #Config.Outfits[jobName][gender], 1 do
         for _, v in pairs(Config.Outfits[jobName][gender][i].grades) do
@@ -826,7 +825,7 @@ local function EnsurePedModel(pedModel)
 end
 
 local function CreatePedAtCoords(pedModel, coords, scenario)
-    pedModel = type(pedModel) == "string" and GetHashKey(pedModel) or pedModel
+    pedModel = type(pedModel) == "string" and joaat(pedModel) or pedModel
     EnsurePedModel(pedModel)
     local ped = CreatePed(0, pedModel, coords.x, coords.y, coords.z - 0.98, coords.w, false, false)
     TaskStartScenarioInPlace(ped, scenario, true)
@@ -910,7 +909,8 @@ local function SetupClothingRoomTargets()
                 name = key,
                 debugPoly = Config.Debug,
                 minZ = v.coords.z - 2,
-                maxZ = v.coords.z + 2
+                maxZ = v.coords.z + 2,
+                heading = v.coords.w
             }, parameters)
         end
     end
@@ -943,7 +943,8 @@ local function SetupPlayerOutfitRoomTargets()
                 name = 'playeroutfitroom_' .. k,
                 debugPoly = Config.Debug,
                 minZ = v.coords.z - 2,
-                maxZ = v.coords.z + 2
+                maxZ = v.coords.z + 2,
+                heading = v.coords.w
             }, parameters)
         end
     end
