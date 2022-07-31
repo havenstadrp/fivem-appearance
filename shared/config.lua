@@ -27,11 +27,15 @@ Config.NewCharacterSections = {
     Tattoos = true
 }
 
+Config.GenderBasedOnPed = true
+
 Config.AlwaysKeepProps = false
 
 Config.PersistUniforms = true -- Keeps Job / Gang Outfits on player reconnects / logout
 
 Config.OnDutyOnlyClothingRooms = false -- Set to `true` to make the clothing rooms accessible only to players who are On Duty
+
+Config.BossManagedOutfits = false -- Allows Job / Gang bosses to manage their own job / gang outfits
 
 Config.ReloadSkinCooldown = 5000
 
@@ -649,7 +653,7 @@ Config.Outfits = {
     ["police"] = {
         ["male"] = {
             {
-                outfitLabel = "Aspirant",
+                name = "Aspirant",
                 outfitData = {
                     ["pants"]     = {item = 147, texture = 0}, -- Pants
                     ["arms"]      = {item = 19, texture = 0}, -- Arms
@@ -666,7 +670,7 @@ Config.Outfits = {
                 grades = { 0, 1, 2, 3, 4 },
             },
             {
-                outfitLabel = "Agent",
+                name = "Agent",
                 outfitData = {
                     ["pants"]     = {item = 147, texture = 0}, -- Pants
                     ["arms"]      = {item = 19, texture = 0}, -- Arms
@@ -683,7 +687,7 @@ Config.Outfits = {
                 grades = { 1, 2, 3, 4 },
             },
             {
-                outfitLabel = "Sergeant",
+                name = "Sergeant",
                 outfitData = {
                     ["pants"]     = {item = 147, texture = 0}, -- Pants
                     ["arms"]      = {item = 19, texture = 0}, -- Arms
@@ -700,7 +704,7 @@ Config.Outfits = {
                 grades = { 2, 3, 4 },
             },
             {
-                outfitLabel = "Inspecteur",
+                name = "Inspecteur",
                 outfitData = {
                     ["pants"]     = {item = 147, texture = 0}, -- Pants
                     ["arms"]      = {item = 19, texture = 0}, -- Arms
@@ -717,7 +721,7 @@ Config.Outfits = {
                 grades = { 3, 4 },
             },
             {
-                outfitLabel = "Hoofdcommissaris",
+                name = "Hoofdcommissaris",
                 outfitData = {
                     ["pants"]     = {item = 105, texture = 7}, -- Pants
                     ["arms"]      = {item = 4, texture = 0}, -- Arms
@@ -733,7 +737,7 @@ Config.Outfits = {
                 grades = { 4 },
             },
             {
-                outfitLabel = "Motor",
+                name = "Motor",
                 outfitData = {
                     ["pants"]     = {item = 146, texture = 0}, -- Pants
                     ["arms"]      = {item = 4, texture = 0}, -- Arms
@@ -749,7 +753,7 @@ Config.Outfits = {
                 grades = { 1, 2, 3, 4 },
             },
             {
-                outfitLabel = "SWAT",
+                name = "SWAT",
                 outfitData = {
                     ["pants"]     = {item = 34, texture = 0}, -- Pants
                     ["arms"]      = {item = 4, texture = 0}, -- Arms
@@ -767,7 +771,7 @@ Config.Outfits = {
         },
         ["female"] = {
             {
-                outfitLabel = "Aspirant",
+                name = "Aspirant",
                 outfitData = {
                     ["pants"]     = {item = 158, texture = 0}, -- Pants
                     ["arms"]      = {item = 3, texture = 0}, -- Arms
@@ -784,7 +788,7 @@ Config.Outfits = {
                 grades = { 0, 1, 2, 3, 4 },
             },
             {
-                outfitLabel = "Agent",
+                name = "Agent",
                 outfitData = {
                     ["pants"]     = {item = 158, texture = 0}, -- Pants
                     ["arms"]      = {item = 3, texture = 0}, -- Arms
@@ -801,7 +805,7 @@ Config.Outfits = {
                 grades = {  1, 2, 3, 4 },
             },
             {
-                outfitLabel = "Sergeant",
+                name = "Sergeant",
                 outfitData = {
                     ["pants"]     = {item = 158, texture = 0}, -- Pants
                     ["arms"]      = {item = 3, texture = 0}, -- Arms
@@ -818,7 +822,7 @@ Config.Outfits = {
                 grades = { 2, 3, 4 },
             },
             {
-                outfitLabel = "Inspecteur",
+                name = "Inspecteur",
                 outfitData = {
                     ["pants"]     = {item = 158, texture = 0}, -- Pants
                     ["arms"]      = {item = 3, texture = 0}, -- Arms
@@ -835,7 +839,7 @@ Config.Outfits = {
                 grades = { 3, 4 },
             },
             {
-                outfitLabel = "Hoofdcommissaris",
+                name = "Hoofdcommissaris",
                 outfitData = {
                     ["pants"]     = {item = 112, texture = 0}, -- Pants
                     ["arms"]      = {item = 7, texture = 0}, -- Arms
@@ -852,7 +856,7 @@ Config.Outfits = {
                 grades = { 4 },
             },
             {
-                outfitLabel = "Motor",
+                name = "Motor",
                 outfitData = {
                     ["pants"]     = {item = 158, texture = 0}, -- Pants
                     ["arms"]      = {item = 3, texture = 0}, -- Arms
@@ -868,7 +872,7 @@ Config.Outfits = {
                 grades = { 1, 2, 3, 4 },
             },
             {
-                outfitLabel = "SWAT",
+                name = "SWAT",
                 outfitData = {
                     ["pants"]     = {item = 30, texture = 0}, -- Pants
                     ["arms"]      = {item = 3, texture = 0}, -- Arms
@@ -889,7 +893,7 @@ Config.Outfits = {
         ["male"] = {
             {
                 -- Outfits
-                outfitLabel = "Worker",
+                name = "Worker",
                 outfitData = {
                     ["pants"]     = {item = 158, texture = 0}, -- Pants
                     ["arms"]      = {item = 3, texture = 0}, -- Arms
@@ -908,7 +912,7 @@ Config.Outfits = {
         },
         ["female"] = {
             {
-                outfitLabel = "Worker",
+                name = "Worker",
                 outfitData = {
                     ["pants"]     = {item = 33, texture = 0}, -- Pants
                     ["arms"]      = {item = 3, texture = 0}, -- Arms
@@ -929,7 +933,7 @@ Config.Outfits = {
     ["ambulance"] = {
         ["male"] = {
             {
-                outfitLabel = "Stagiair",
+                name = "Stagiair",
                 outfitData = {
                     ["arms"]      = {item = 85, texture = 0}, -- Arms
                     ["t-shirt"]   = {item = 129, texture = 0}, -- T-Shirt
@@ -948,7 +952,7 @@ Config.Outfits = {
                 grades = { 0, 1, 2, 3 },
             },
             {
-                outfitLabel = "Ambulancier",
+                name = "Ambulancier",
                 outfitData = {
                     ["arms"]      = {item = 90, texture = 0}, -- Arms
                     ["t-shirt"]   = {item = 75, texture = 0}, -- T-Shirt
@@ -967,7 +971,7 @@ Config.Outfits = {
                 grades = { 1, 2, 3 },
             },
             {
-                outfitLabel = "Verpleger",
+                name = "Verpleger",
                 outfitData = {
                     ["arms"]      = {item = 85, texture = 0}, -- Arms
                     ["t-shirt"]   = {item = 129, texture = 0}, -- T-Shirt
@@ -986,7 +990,7 @@ Config.Outfits = {
                 grades = { 2, 3 },
             },
             {
-                outfitLabel = "Hoofdarts",
+                name = "Hoofdarts",
                 outfitData = {
                     ["arms"]      = {item = 4, texture = 0}, -- Arms
                     ["t-shirt"]   = {item = 32, texture = 1}, -- T-Shirt
@@ -1007,7 +1011,7 @@ Config.Outfits = {
         },
         ["female"] = {
             {
-                outfitLabel = "Stagiair",
+                name = "Stagiair",
                 outfitData = {
                     ["arms"]      = {item = 98, texture = 0}, -- Arms
                     ["t-shirt"]   = {item = 6, texture = 0}, -- T-Shirt
@@ -1026,7 +1030,7 @@ Config.Outfits = {
                 grades = { 0, 1, 2, 3 },
             },
             {
-                outfitLabel = "Ambulancier",
+                name = "Ambulancier",
                 outfitData = {
                     ["arms"]      = {item = 98, texture = 0}, -- Arms
                     ["t-shirt"]   = {item = 72, texture = 0}, -- T-Shirt
@@ -1045,7 +1049,7 @@ Config.Outfits = {
                 grades = { 1, 2, 3 },
             },
             {
-                outfitLabel = "Verpleger",
+                name = "Verpleger",
                 outfitData = {
                     ["arms"]      = {item = 100, texture = 0}, -- Arms
                     ["t-shirt"]   = {item = 5, texture = 0}, -- T-Shirt
@@ -1064,7 +1068,7 @@ Config.Outfits = {
                 grades = { 2, 3 },
             },
             [4] = {
-                outfitLabel = "Hoofdarts",
+                name = "Hoofdarts",
                 outfitData = {
                     ["arms"]      = {item = 7, texture = 0}, -- Arms
                     ["t-shirt"]   = {item = 64, texture = 2}, -- T-Shirt
